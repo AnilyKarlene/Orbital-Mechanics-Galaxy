@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>OMG-Arkanoid: Orbital Mechanics Galaxy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game">
+        <div class="game-header">
+            <div class="score-item"><span class="score-label">ОЧКИ (ОБЩ)</span><span class="score-value" id="globalScoreDisplay">0</span></div>
+            <div class="score-item"><span class="score-label">ОЧКИ (УР)</span><span class="score-value" id="localScoreDisplay">0</span></div>
+            <div class="score-item"><span class="score-label">УРОВЕНЬ</span><span class="score-value" id="levelDisplay">1</span></div>
+            <div class="score-item"><span class="score-label">ЖИЗНИ</span><span class="score-value" id="livesDisplay">3</span></div>
+            <div class="score-item"><span class="score-label">ВРЕМЯ</span><span class="score-value" id="timeDisplay">00:00</span></div>
+            <div class="score-item"><span class="score-label">ДЕНЬГИ</span><span class="score-value" id="moneyDisplay">0</span></div>
+        </div>
+
+        <div class="canvas-container">
+            <div class="aspect-ratio-wrapper">
+                <canvas id="gameCanvas" width="900" height="600"></canvas>
+                <div class="deco-left"></div>
+                <div class="deco-right"></div>
+
+                <div id="pauseOverlay" class="overlay">
+                    <div class="title">OMG-Arkanoid: Orbital Mechanics Galaxy</div>
+                    <div class="instruction">Кликни по экрану или нажми кнопку</div>
+                    <button class="btn" id="startButton">НАЧАТЬ ИГРУ</button>
+                </div>
+
+                <div id="levelCompleteOverlay" class="overlay hidden">
+                    <div class="typing-text" id="levelCompleteText"></div>
+                    <div id="bonusContainer" class="bonus-overlay"></div>
+                    <div class="instruction">Следующий уровень через: <span id="levelTimer">5</span></div>
+                </div>
+
+                <div id="levelStartOverlay" class="level-start-overlay" style="display: none;">
+                    <div class="level-start-box" id="levelStartBox">
+                        <div id="levelStartTheme">Лунное затмение</div>
+                        <span id="levelStartNumber">Ур. 1</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mobile-controls">
+            <button class="mobile-btn left-btn"><i class="fas fa-arrow-left"></i></button>
+            <button class="mobile-btn right-btn"><i class="fas fa-arrow-right"></i></button>
+        </div>
+        <div class="controls-info">
+            <i class="fas fa-mouse-pointer"></i> Двигайте мышью или ← →
+            <span class="import-btn" id="pasteFromClipboardBtn"><i class="fas fa-clipboard"></i> Вставить уровень</span>
+            <span class="import-btn" id="showImportBtn"><i class="fas fa-code"></i> Ручной ввод</span>
+        </div>
+        <div class="import-area" id="importArea">
+            <textarea id="levelCodeInput" placeholder='Вставьте JSON массива блоков, можно указывать "shape": "circle" или "rect" (по умолчанию rect).'></textarea>
+            <button class="btn-small" id="importLevelBtn">Загрузить уровень</button>
+        </div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
