@@ -1,0 +1,3 @@
+(js/ball.js, js/brick.js, js/collision.js, js/config.js, js/effectManager.js, js/game.js, js/input.js, js/items.js, js/levelManager.js, js/main.js, js/paddle.js, js/renderer.js, js/utils.js)
+
+(ball.js, brick.js, collision.js, config.js, effectManager.js, game.js, input.js, items.js, levelManager.js, main.js, paddle.js, renderer.js, utils.js)
